@@ -1,0 +1,277 @@
+/* Definição da paleta de cores usada em toda a página. */
+:root {
+  --cor_vermelha: #ad1f23;
+  --cor_vermelho_hover: #8f191d;
+  --cor_preta: #000000;
+  --cor_branca: #ffffff;
+  --cor_fundo: #f4f6f9;
+  --cor_texto_secundario: #555a62;
+  --cor_borda: #dfe3e8;
+  --fonte_titulo: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --fonte_padrao: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* Mantém padding e bordas dentro da largura definida dos elementos. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo do corpo da página. */
+body {
+  min-height: 100vh;
+  background: var(--cor_fundo);
+  color: var(--cor_preta);
+  font-family: var(--fonte_padrao);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Estilo padrão para links e botões. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Linha vermelha de foco nos elementos interativos */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--cor_vermelha);
+  outline-offset: 2px;
+}
+
+/*_______________________________________*/
+
+/* Layout principal da tela de login (Grid de duas colunas) */
+.login_grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  min-height: 100vh;
+}
+
+/* Área da imagem lateral */
+.login_imagem {
+  position: relative;
+  background: #e4e8f0;
+}
+
+.login_imagem img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Painel onde fica o formulário centralizado */
+.login_painel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.login_caixa {
+  width: 100%;
+  max-width: 440px;
+}
+
+/*_______________________________________*/
+
+/* Estilo do botão "Voltar ao site" */
+.botao_voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor_preta);
+}
+
+.botao_voltar:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Estilo do título principal */
+.titulo_pagina {
+  margin-top: 20px;
+  font-family: var(--fonte_titulo);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #111;
+}
+
+/* Estilo do subtítulo */
+.descricao_pagina {
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--cor_texto_secundario);
+}
+
+/*_______________________________________*/
+
+/* Estilo do formulário */
+.formulario {
+  margin-top: 19px;
+}
+
+.campo_formulario {
+  margin-top: 20px;
+}
+
+.campo_formulario label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cor_preta);
+}
+
+.linha_campo_topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.linha_campo_topo label {
+  margin-bottom: 0;
+}
+
+/* Link "Esqueci minha senha" */
+.link_esqueci_senha,
+.link_cadastro {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cor_vermelha);
+}
+
+.link_esqueci_senha:hover,
+.link_cadastro:hover {
+  text-decoration: underline;
+  color: var(--cor_vermelho_hover);
+}
+
+/* Inputs do formulário */
+.campo_formulario input {
+  display: block;
+  width: 100%;
+  height: 47px;
+  padding: 0 15px;
+  border: 1px solid var(--cor_borda);
+  border-radius: 12px;
+  background: var(--cor_branca);
+  font-family: var(--fonte_padrao);
+  font-size: 14px;
+  color: var(--cor_preta);
+}
+
+.campo_formulario input::placeholder {
+  color: #8c9199;
+}
+
+.campo_formulario input:focus {
+  border-color: var(--cor_vermelha);
+  outline: none;
+}
+
+/* Campo de senha com botão de mostrar/ocultar */
+.campo_senha {
+  position: relative;
+}
+
+.campo_senha input {
+  padding-right: 84px;
+}
+
+.botao_visibilidade {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  border: 0;
+  background: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2b2f36;
+}
+
+.botao_visibilidade:hover {
+  color: var(--cor_vermelha);
+}
+
+/* Botão principal de envio (Entrar) */
+.botao_envio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--cor_vermelha);
+  color: var(--cor_branca);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.botao_envio:hover {
+  background: var(--cor_vermelho_hover);
+}
+
+/* Avisos e Rodapé do formulário */
+.aviso_demo {
+  font-size: 12px;
+  color: #8c9199;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.texto_cadastro {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--cor_texto_secundario);
+}
+
+.mensagem_erro {
+  font-size: 12px;
+  color: var(--cor_vermelha);
+  margin-top: 4px;
+}
+
+/*_______________________________________*/
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .login_grid {
+    grid-template-columns: 1fr;
+  }
+  .login_imagem {
+    display: none;
+  }
+  .login_painel {
+    padding: 40px 24px;
+  }
+  .titulo_pagina {
+    font-size: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .botao_envio {
+    transition: none;
+  }
+}
