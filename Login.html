@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Painel Administrativo</title>
+  
+  <!-- Estilos CSS no padrão global -->
+  <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+
+  <main class="login_grid">
+    <div class="login_imagem">
+      <img src="assets/SalaBranca.png" alt="Ambiente com móveis sob medida em madeira">
+    </div>
+    <section class="login_painel">
+      <div class="login_caixa">
+        <a href="#/" class="botao_voltar">‹ Voltar ao site</a>
+        <h1 class="titulo_pagina">Bem-vindo de volta!</h1>
+        <p class="descricao_pagina">Entre com seus dados para acessar sua conta.</p>
+        
+        <form class="formulario" id="login-form" novalidate>
+          <div class="campo_formulario">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="console.log220@gmail.com" autocomplete="email" required>
+            <small class="mensagem_erro" data-error="email" hidden></small>
+          </div>
+
+          <div class="campo_formulario">
+            <div class="linha_campo_topo">
+              <label for="senha">Senha</label>
+              <a href="esqueci-senha.html" data-action="forgot-password" class="link_esqueci_senha">Esqueci minha senha</a>
+            </div>
+            <div class="campo_senha">
+              <input type="password" id="senha" name="senha" placeholder="••••••••" autocomplete="current-password" required>
+              <button type="button" class="botao_visibilidade" data-action="toggle-login-password">Mostrar</button>
+            </div>
+            <small class="mensagem_erro" data-error="senha" hidden></small>
+          </div>
+
+          <button type="submit" class="botao_envio">Entrar na minha conta</button>
+          
+          <p class="aviso_demo">Use: console.log220@gmail.com / adm26pt@</p>
+          <small class="mensagem_erro" role="alert" data-error="form" hidden></small>
+
+          <p class="texto_cadastro">
+            Não tem uma conta? <a href="cadastro.html" class="link_cadastro">Cadastre-se</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script JavaScript -->
+  <script src="Login.js"></script>
+</body>
+</html>
